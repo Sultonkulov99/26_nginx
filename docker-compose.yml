@@ -5,8 +5,6 @@ services:
     build: .
     container_name: 26_app
     restart: always
-    env_file:
-      - .env
     ports:
       - '4000:3000'
     command: >
