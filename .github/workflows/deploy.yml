@@ -21,17 +21,19 @@ jobs:
             echo "Creating project folder if it doesn't exist!"
             mkdir -p /root
             cd /root
-            if [ ! -d "26_nginx/.git" ]; then
+
+            if [ ! -d "26_nginx" ]; then
               echo "Cloning repository!" 
               git clone https://github.com/Sultonkulov99/26_nginx
-            else
-              echo "Pulling latest changes!"
-              cd 26_nginx  
-              git pull origin main  
             fi
-  
+
+            cd 26_nginx
+
+            echo "Pulling latest changes!"
+            git pull origin main  
+
             echo "Stopping containers"
-            docker compose down
+            docker compose down || true
 
             echo "Building containers"
             docker compose build 
