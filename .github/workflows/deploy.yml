@@ -21,7 +21,6 @@ jobs:
             echo "Creating project folder if it doesn't exist!"
             mkdir -p /root
             cd /root
-
             if [ ! -d "26_nginx/.git" ]; then
               echo "Cloning repository!" 
               git clone https://github.com/Sultonkulov99/26_nginx
